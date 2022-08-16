@@ -17,6 +17,7 @@ logger.setLevel(logging.ERROR)
 
 @Client.on_message((filters.private | filters.group) & filters.command('connect'))
 async def addconnection(client, message):
+    global group_id
     userid = message.from_user.id if message.from_user else None
     if not userid:
         return await message.reply(f"You are anonymous admin. Use /connect {message.chat.id} in PM")
