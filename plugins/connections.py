@@ -9,8 +9,10 @@ from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 from database.connections_mdb import add_connection, all_connections, if_active, delete_connection
+import logging
 
-
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.ERROR)
 
 
 @Client.on_message((filters.private | filters.group) & filters.command('connect'))
