@@ -41,10 +41,10 @@ def chat (self,group_id,userid):
     try:
       st = await client.get_chat_member(group_id, userid)
         if (
-                st.status != "administrator"
-                and st.status != "creator"
-                and userid not in AUTH_USERS
-        ):
+              st.status != "administrator"
+              and st.status != "creator"
+              and userid not in AUTH_USERS
+           ):
       await message.reply_text("You should be an admin in Given group!", quote=True)
         return
     except Exception as e:
