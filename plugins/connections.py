@@ -39,14 +39,14 @@ async def addconnection(client, message):
         group_id = message.chat.id
 def chat (self,group_id,userid):
     try:
-        st = await client.get_chat_member(group_id, userid)
+      st = await client.get_chat_member(group_id, userid)
         if (
                 st.status != "administrator"
                 and st.status != "creator"
                 and userid not in AUTH_USERS
         ):
-            await message.reply_text("You should be an admin in Given group!", quote=True)
-            return
+      await message.reply_text("You should be an admin in Given group!", quote=True)
+        return
     except Exception as e:
         logger.exception(e)
         await message.reply_text(
