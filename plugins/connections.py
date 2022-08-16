@@ -44,7 +44,7 @@ def chat (self,group_id,userid):
             and st.status != "creator" 
             and userid not in AUTH_USERS
            ):
-           await message.reply_text("You should be an admin in Given group!", quote=True)
+                await message.reply_text("You should be an admin in Given group!", quote=True)
         return
     except Exception as e:
         logger.exception(e)
