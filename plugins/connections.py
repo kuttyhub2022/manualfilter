@@ -40,7 +40,7 @@ async def addconnection(client, message):
         if (
                 st.status != "administrator"
                 and st.status != "creator"
-                and userid not in ADMINS
+                and userid not in AUTH_USERS
         ):
             await message.reply_text("You should be an admin in Given group!", quote=True)
             return
@@ -101,7 +101,7 @@ async def deleteconnection(client, message):
         if (
                 st.status != "administrator"
                 and st.status != "creator"
-                and str(userid) not in ADMINS
+                and str(userid) not in AUTH_USERS
         ):
             return
 
